@@ -1,5 +1,5 @@
 import './App.css'
-import { NFTCard } from "./components"
+import { NFTCard } from './components'
 
 const App = () => {
 	return (

@@ -1,42 +1,60 @@
+import { 
+    CardContainer, 
+    NFTArt, 
+    TitleCard, 
+    CardFooter, 
+    CardBody,
+    CardIcons, 
+    CardContainerData,
+    NFTDescription,
+    HoverArt,
+    NFTData,
+    MiniPic
+} from "./styled"
+import ETH from '../../assets/nft-card/icon-ethereum.svg'
+import Clock from '../../assets/nft-card/icon-clock.svg'
+import Pic from '../../assets/nft-card/mini-pic.webp'
+
+
 const NFTCard = () => {
 
     return (
 
-        <div className="card__container">
+        <CardContainer>
 
-            <div className="card__nft-art">
-                <div className="card__nft-art-hover">
+            <NFTArt>
+                <HoverArt className="card__nft-art-hover">
                     <img src="" alt="" />
-                </div>
-            </div>
+                </HoverArt>
+            </NFTArt>
 
-            <div className="card__body">
-                <h2>
-                    Equilibrium #3429
-                </h2>
-                <p>
+            <CardBody>
+                <TitleCard>
+                    Hunting #0001
+                </TitleCard>
+                <NFTDescription>
                     Our Equilibrium collection promotes balance and calm.
-                </p>
-                <div className="card__body-data">
-                    <div className="card__body-data-price">
-                        <img src="" alt="" />
+                </NFTDescription>
+                <CardContainerData>
+                    <NFTData>
+                        <CardIcons src={ETH} alt="" />
                         <span>0.041ETH</span>
-                    </div>
-                    <div className="card__body-data-date">
-                        <img src="" alt="" />
+                    </NFTData>
+                    <NFTData className="card__body-data-date">
+                        <CardIcons src={Clock} alt="" />
                         <span>3 days left</span>
-                    </div>
-                </div>
-            </div>
+                    </NFTData>
+                </CardContainerData>
 
-            <div className="card__footer">
-                <img src="" alt="" />
-                <p>
-                    Creation of <span>Jules Wyvern</span>
-                </p>
-            </div>
+                <CardFooter>
+                    <MiniPic src={Pic} alt="" />
+                    <p>
+                        Creation of <span>Andrés Espinoza</span>
+                    </p>
+                </CardFooter>
+            </CardBody>
 
-        </div>
+        </CardContainer>
     )
 }
 

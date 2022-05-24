@@ -10,6 +10,7 @@ import {
 	HoverArt,
 	NFTData,
 	MiniPic,
+    Name
 } from './styled'
 import ETH from '../../assets/nft-card/icon-ethereum.svg'
 import Clock from '../../assets/nft-card/icon-clock.svg'
@@ -32,7 +33,7 @@ const NFTCard = () => {
 				<CardContainerData>
 					<NFTData>
 						<CardIcons src={ETH} alt='' />
-						<span>0.041ETH</span>
+						<span>0.074ETH</span>
 					</NFTData>
 					<NFTData className='card__body-data-date'>
 						<CardIcons src={Clock} alt='' />
@@ -43,7 +44,7 @@ const NFTCard = () => {
 				<CardFooter>
 					<MiniPic src={Pic} alt='' />
 					<p>
-						Creation of <span>Andrés Espinoza</span>
+						Creation of <Name href='https://github.com/andres-espinoza' target='_blank' rel='noopener noreferrer'>Andrés Espinoza</Name>
 					</p>
 				</CardFooter>
 			</CardBody>

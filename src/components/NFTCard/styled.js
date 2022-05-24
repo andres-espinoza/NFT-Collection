@@ -106,3 +106,8 @@ export const MiniPic = styled('img')`
 	aspect-ratio: 1/1;
 	border-radius: 50%;
 `
+
+export const Name = styled('a')`
+    font-weight: 600;
+    color: #000;
+`

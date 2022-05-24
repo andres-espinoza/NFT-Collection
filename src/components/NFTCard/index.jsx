@@ -7,7 +7,6 @@ import {
 	CardIcons,
 	CardContainerData,
 	NFTDescription,
-	HoverArt,
 	NFTData,
 	MiniPic,
     Name
@@ -15,14 +14,13 @@ import {
 import ETH from '../../assets/nft-card/icon-ethereum.svg'
 import Clock from '../../assets/nft-card/icon-clock.svg'
 import Pic from '../../assets/nft-card/mini-pic.webp'
+import Eye from '../../assets/nft-card/icon-view.svg'
 
 const NFTCard = () => {
 	return (
 		<CardContainer>
 			<NFTArt>
-				<HoverArt className='card__nft-art-hover'>
-					<img src='' alt='' />
-				</HoverArt>
+                <img src={Eye} alt='' />
 			</NFTArt>
 
 			<CardBody>

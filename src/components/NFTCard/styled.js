@@ -6,7 +6,6 @@ import {
 	titleFont,
 } from './design-variables'
 import NFTColor from '../../assets/nft-card/nft-2.webp'
-import NFTBW from '../../assets/nft-card/nft.webp'
 
 export const CardContainer = styled('div')`
 	width: min-content;
@@ -26,27 +25,31 @@ export const NFTArt = styled('figure')`
 	height: 250px;
 	width: min-content;
 	aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 	background-image: url(${NFTColor});
 	background-size: contain;
 	border-radius: ${borderRadius};
+    filter: grayscale(0);
+    transition: all 0.3s ease-out;
 	cursor: pointer;
-`
 
-export const HoverArt = styled('div')`
-	width: min-content;
-	height: 100%;
-	aspect-ratio: 1/1;
-	background-image: url(${NFTBW});
-	background-size: contain;
-	border-radius: ${borderRadius};
-	cursor: pointer;
-	opacity: 0;
-	transition: all 0.3s ease;
+    img:nth-child(1) {
+        transition: all 0.3s ease-out;
+        opacity: 0;
+    }
 
-	&:hover {
-		opacity: 1;
-		transition: all 0.4s ease-in-out;
-	}
+    &:hover {
+
+        filter: grayscale(1);
+        transition: all 0.3s ease-out;
+
+        img:nth-child(1) {
+            transition: all 0.3s ease-out;
+            opacity: 1;
+        }
+    }
 `
 
 export const TitleCard = styled('h2')`
@@ -74,6 +77,7 @@ export const CardContainerData = styled('div')`
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 0.7rem;
+    margin-top: auto;
 `
 
 export const NFTData = styled('div')`
@@ -92,7 +96,7 @@ export const CardFooter = styled('div')`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 0.7rem;
+	gap: 0.4rem;
 	width: max-content;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;

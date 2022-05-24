@@ -105,10 +105,11 @@ export const CardFooter = styled('div')`
 `
 
 export const MiniPic = styled('img')`
-	width: 1.2rem;
-	height: 1.2rem;
+	width: 1.5rem;
+	height: 1.5rem;
 	aspect-ratio: 1/1;
 	border-radius: 50%;
+    border: 2px solid #9fbae4;
 `
 
 export const Name = styled('a')`

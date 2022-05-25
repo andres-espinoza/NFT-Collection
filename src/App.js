@@ -1,11 +1,10 @@
 import './App.css'
-import { NFTCard, NFTCardRef } from './components'
+import {  NFTCard } from './components'
 
 const App = () => {
 	return (
 		<div className='App'>
-			{/* <NFTCard NftPrice={0.089}/> */}
-			<NFTCardRef NFTPrice={0.089}/>
+			<NFTCard NFTPrice={0.089}/>
 		</div>
 	)
 }

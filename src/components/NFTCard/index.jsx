@@ -1,51 +1,66 @@
+import { useState, useEffect } from 'react'
 import {
 	CardContainer,
-	NFTArt,
-	TitleCard,
-	CardFooter,
-	CardBody,
-	CardIcons,
-	CardContainerData,
-	NFTDescription,
+	NFT,
 	NFTData,
+	NFTName,
+	NFTprice,
+	NFTCoin,
+	Footer,
+	Author,
 	MiniPic,
-    Name
+	Name,
+	HeartToClick
 } from './styled'
-import ETH from '../../assets/nft-card/icon-ethereum.svg'
-import Clock from '../../assets/nft-card/icon-clock.svg'
 import Pic from '../../assets/nft-card/mini-pic.webp'
-import Eye from '../../assets/nft-card/icon-view.svg'
 
-const NFTCard = () => {
+const NFTCard = ({ NftPrice }) => {
+
+	const [displayPrice, setDisplayPrice] = useState(null)
+
+	const animationPrice = () => {
+		setDisplayPrice(0)
+	}
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			if(displayPrice < NftPrice*1000) {
+				setDisplayPrice(displayPrice + 1)
+			}
+		}, 10)
+
+		return () => clearInterval(interval)
+
+	},)
+
 	return (
 		<CardContainer>
-			<NFTArt>
-                <img src={Eye} alt='' />
-			</NFTArt>
-
-			<CardBody>
-				<TitleCard>Hunting #0001</TitleCard>
-				<NFTDescription>
-					Our Equilibrium collection promotes balance and calm.
-				</NFTDescription>
-				<CardContainerData>
-					<NFTData>
-						<CardIcons src={ETH} alt='' />
-						<span>0.074ETH</span>
-					</NFTData>
-					<NFTData className='card__body-data-date'>
-						<CardIcons src={Clock} alt='' />
-						<span>3 days left</span>
-					</NFTData>
-				</CardContainerData>
-
-				<CardFooter>
-					<MiniPic src={Pic} alt='' />
-					<p>
-						Creation of <Name href='https://github.com/andres-espinoza' target='_blank' rel='noopener noreferrer'>Andrés Espinoza</Name>
-					</p>
-				</CardFooter>
-			</CardBody>
+			<NFT>
+				<NFTData onMouseEnter={() => animationPrice()}>
+					<NFTName>
+						Hunting #0001
+					</NFTName>
+					<NFTprice>
+						{displayPrice >= 10 ? `0.0${displayPrice}` : `0.00${displayPrice}`}
+						<NFTCoin>
+							ETH
+						</NFTCoin>
+					</NFTprice>
+				</NFTData>
+			</NFT>
+			<Footer>
+				<Author>
+					<MiniPic src={Pic} />
+					<Name 
+					href='https://github.com/andres-espinoza'
+					target='_blank'
+					rel='noopener noreferrer'
+					>
+						Andrés Espinoza
+					</Name>
+				</Author>
+				<HeartToClick />
+			</Footer>
 		</CardContainer>
 	)
 }

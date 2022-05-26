@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import NftArt from '../../../assets/nft-card/nft.webp'
 import HeartFill from '../../../assets/nft-card/heart-fill.svg'
 import HeartStroke from '../../../assets/nft-card/heart-stroke.svg'
@@ -94,8 +94,21 @@ export const Footer = styled.div`
         }
     }
 `
+const pulseHeart = keyframes`
 
-export const HeartToClick = styled('div')`
+	0% {
+		transform: scale(1)
+	}
+
+	50% {
+		transform: scale(1.1)
+	}
+
+	100% {
+		transform: scale(1)
+	}
+`
+export const HeartToClick = styled.div`
 	width: 1.2rem;
 	height: 1.2rem;
 	aspect-ratio: 1/1;
@@ -107,6 +120,7 @@ export const HeartToClick = styled('div')`
 
 	&:hover {
 		background-image: url(${HeartFill});
+		animation: ${pulseHeart} 1.2s infinite;
 		width: 1.2rem;
 		height: 1.2rem;
 		aspect-ratio: 1/1;
@@ -114,3 +128,13 @@ export const HeartToClick = styled('div')`
 	}
 
 `
+export const HeartClicked = styled.div`
+	width: 1.2rem;
+	height: 1.2rem;
+	aspect-ratio: 1/1;
+	background-image: url(${HeartFill});
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+`
+
